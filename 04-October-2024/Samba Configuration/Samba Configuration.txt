@@ -1,0 +1,51 @@
+                                                                                    Samba Configuration
+									                           _______________________________________________________________
+
+																
+	1>> Check Port Use this CMD
+           = netstat -tulpn
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	                                                                            Samba Client
+												       _________________________________________________________________
+       apt install smbclient
+      smbclient //10.248.0.92/SharedDirectory
+        cd
+      sudo apt install rsync
+      sudo mkdir -p /srv/samba/share
+      sudo mkdir -p /mnt/samba_share
+      sudo mount -t cifs //10.248.0.92/Share /mnt/samba_share -o guest
+     cat /mnt/samba_share/index.html
+     //10.248.0.92/Share /mnt/samba_share cifs guest,uid=1000,iocharset=utf8 0 0
+     cat /mnt/samba_share/index.html
+     ls
+     ifconfig
+     whoami
+     exit
+     sudo mount -t cifs -o username=sambauser,password=1234 //10.248.0.92/SharedFolder /mnt/sambashare
+     df -h | grep sambashare
+     ls
+    sudo mount -t cifs -o username=sambauser,password=1234 //10.248.0.92/SharedFolder /opt/tomcat/webapps/
+    sudo nano /etc/fstab
+													   
+													   
+													   
+													   

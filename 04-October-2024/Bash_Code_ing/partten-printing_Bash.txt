@@ -1,0 +1,254 @@
+ Pattern Printing with code ?
+
+ChatGPT said:
+ChatGPT
+Here are several basic pattern printing programs using Bash scripting. These types of questions are common in technical interviews for freshers. Each program will print a different pattern based on loops.
+
+1. Right-Angle Triangle of Numbers
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=1; i<=rows; i++)); do
+    for ((j=1; j<=i; j++)); do
+        echo -n "$j "
+    done
+    echo
+done
+Output (for 5 rows):
+
+Copy code
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+2. Right-Angle Triangle of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=1; i<=rows; i++)); do
+    for ((j=1; j<=i; j++)); do
+        echo -n "* "
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+* 
+* * 
+* * * 
+* * * * 
+* * * * *
+3. Inverted Right-Angle Triangle of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=rows; i>=1; i--)); do
+    for ((j=1; j<=i; j++)); do
+        echo -n "* "
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+* * * * * 
+* * * * 
+* * * 
+* * 
+*
+4. Pyramid Pattern of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=1; i<=rows; i++)); do
+    for ((j=i; j<=rows; j++)); do
+        echo -n " "
+    done
+    for ((j=1; j<=2*i-1; j++)); do
+        echo -n "*"
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+     *
+    ***
+   *****
+  *******
+ *********
+5. Inverted Pyramid Pattern of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=rows; i>=1; i--)); do
+    for ((j=i; j<rows; j++)); do
+        echo -n " "
+    done
+    for ((j=1; j<=2*i-1; j++)); do
+        echo -n "*"
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+*********
+ *******
+  *****
+   ***
+    *
+6. Diamond Pattern of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=1; i<=rows; i++)); do
+    for ((j=i; j<=rows; j++)); do
+        echo -n " "
+    done
+    for ((j=1; j<=2*i-1; j++)); do
+        echo -n "*"
+    done
+    echo
+done
+for ((i=rows-1; i>=1; i--)); do
+    for ((j=rows; j>=i; j--)); do
+        echo -n " "
+    done
+    for ((j=1; j<=2*i-1; j++)); do
+        echo -n "*"
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+     *
+    ***
+   *****
+  *******
+ *********
+  *******
+   *****
+    ***
+     *
+7. Hollow Square Pattern of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter the size of the square: " size
+for ((i=1; i<=size; i++)); do
+    for ((j=1; j<=size; j++)); do
+        if ((i == 1 || i == size || j == 1 || j == size)); then
+            echo -n "* "
+        else
+            echo -n "  "
+        fi
+    done
+    echo
+done
+Output (for size 5):
+
+markdown
+Copy code
+* * * * *
+*       *
+*       *
+*       *
+* * * * *
+8. Floyd’s Triangle
+bash
+Copy code
+#!/bin/bash
+read -p "Enter the number of rows: " rows
+num=1
+for ((i=1; i<=rows; i++)); do
+    for ((j=1; j<=i; j++)); do
+        echo -n "$num "
+        num=$((num + 1))
+    done
+    echo
+done
+Output (for 5 rows):
+
+Copy code
+1 
+2 3 
+4 5 6 
+7 8 9 10 
+11 12 13 14 15
+9. Pascal’s Triangle
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=0; i<rows; i++)); do
+    for ((j=rows; j>i; j--)); do
+        echo -n " "
+    done
+    num=1
+    for ((k=0; k<=i; k++)); do
+        echo -n "$num "
+        num=$((num * (i - k) / (k + 1)))
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+     1 
+    1 1 
+   1 2 1 
+  1 3 3 1 
+ 1 4 6 4 1
+10. Hourglass Pattern of Stars
+bash
+Copy code
+#!/bin/bash
+read -p "Enter number of rows: " rows
+for ((i=rows; i>=1; i--)); do
+    for ((j=rows; j>i; j--)); do
+        echo -n " "
+    done
+    for ((j=1; j<=2*i-1; j++)); do
+        echo -n "*"
+    done
+    echo
+done
+for ((i=2; i<=rows; i++)); do
+    for ((j=rows; j>i; j--)); do
+        echo -n " "
+    done
+    for ((j=1; j<=2*i-1; j++)); do
+        echo -n "*"
+    done
+    echo
+done
+Output (for 5 rows):
+
+markdown
+Copy code
+*********
+ *******
+  *****
+   ***
+    *
+   ***
+  *****
+ *******
+*********
+These are some common pattern printing examples using Bash scripting. Let me know if you need more complex or specific patterns!
